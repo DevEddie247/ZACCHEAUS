@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>
+      Services | Zaccheaus unisex salon & Spa
+    </title>
+    <meta name="description" content="Premium barbershop and grooming studio.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <div id="site-header">
+    </div>
+    <section class="services-hero" aria-labelledby="services-title">
+      <div class="wrap">
+        <div class="services-hero-copy">
+          <h1 id="services-title">Our Services</h1>
+          <p>Browse, search and book.</p>
+        </div>
+        <!-- Change this image's src to your photo. To use a video, replace this img with a video element and set its source to a file in videos/. -->
+        <div class="services-hero-media">
+          <img src="./photos/22.jpg" alt="Salon service showcase">
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="wrap">
+        <div id="svc-filters" class="filters" role="group" aria-label="Service categories">
+          <button type="button" class="on" data-k="all">All</button>
+          <button type="button" data-k="hair">Ladies Hair</button>
+          <button type="button" data-k="nails">Nails &amp; Face</button>
+          <button type="button" data-k="barbing">Barbing</button>
+          <button type="button" data-k="lash">Lash &amp; Brows</button>
+          <button type="button" data-k="specialty">Specialty Services</button>
+        </div>
+        <input id="svc-search" type="search" placeholder="Search services..." aria-label="Search services" autocomplete="off">
+        <p class="svc-hint">Tap any service to book it.</p>
+        <div id="svc-catalog">
+          <div class="svc-cat" id="hair" data-cat="hair">
+            <div class="svc-cat-head">
+              <h2>Ladies Hair</h2>
+              <p>Gel styles, sew-ins, wig care, straightening, relaxer and braids.</p>
+            </div>
+            <div class="svc-group" data-group="Hair Styling">
+              <h3>Hair Styling</h3>
+              <ul class="svc-list">
+                <li><a class="svc-row" href="booking.html?service=Normal%20gel" data-search="normal gel hair styling ladies hair"><span class="n">Normal gel</span><span class="dots" aria-hidden="true"></span><span class="pr">&#8358;25,000</span></a></li>
+                <li><a class="svc-row" href="booking.html?service=Gel%20ponytail" data-search="gel ponytail hair styling ladies hair"><span class="n">Gel ponytail</span><span class="dots" aria-hidden="true"></span><span class="pr">&#8358;20,000</span></a></li>
+                <li><a class="svc-row" href="booking.html?service=Closure%20sew-in" data-search="closure sew-in hair styling ladies hair"><span class="n">Closure sew-in</span><span class="dots" aria-hidden="true"></span><span class="pr">&#8358;25,000</span></a></li>
+                <li><a class="svc-row" href="booking.html?service=Frontal%20sew-in" data-search="frontal sew-in hair styling ladies hair"><span class="n">Frontal sew-in</span><span class="dots" aria-hidden="true"></span><span class="pr">&#8358;28,000</span></a></li>
+                <li><a class="svc-row" href="booking.html?service=Frontal%20installation" data-search="frontal installation hair styling ladies hair"><span class="n">Frontal installation</span><span class="dots" aria-hidden="true"></span><span class="pr">&#8358;30,000</span></a></li>
+                <li><a class="svc-row" href="booking.html?service=Coloring%20of%20wig" data-search="coloring of wig hair styling ladies hair"><span class="n">Coloring of wig</span><span class="dots" aria-hidden="true"></span><span class="pr">&#8358;20,000</span></a></li>
+                <li><a class="svc-row" href="booking.html?service=Wig%20revamping" data-search="wig revamping hair styling ladies hair"><span class="n">Wig revamping</span><span class="dots" aria-hidden="true"></span><span class="pr">&#8358;12,000</span></a></li>
+                <li><a class="svc-row" href="booking.html?service=Straightening%20of%20long%20wig" data-search="straightening of long wig hair styling ladies hair"><span class="n">Straightening of long wig</span><span class="dots" aria-hidden="true"></span><span class="pr">&#8358;10,000</span></a></li>
+                <li><a class="svc-row" href="booking.html?service=Straightening%20of%20short%20wig" data-search="straightening of short wig hair styling ladies hair"><span class="n">Straightening of short wig</span><span class="dots" aria-hidden="true"></span><span class="pr">&#8358;12,000</span></a></li>
+                <li><a class="svc-row" href="booking.html?service=Natural%20hair%20straightening" data-search="natural hair straightening hair styling ladies hair"><span class="n">Natural hair straightening</span><span class="dots" aria-hidden="true"></span><span class="pr">&#8358;10,000</span></a></li>
+                <li><a class="svc-row" href="booking.html?service=Relaxer%20and%20Setting" data-search="relaxer and setting hair styling ladies hair"><span class="n">Relaxer and Setting</span><span class="dots" aria-hidden="true"></span><span class="pr">&#8358;15,000</span></a></li>
+                <li><a class="svc-row" href="booking.html?service=Braids%20%28Men%20and%20Women%29" data-search="braids (men and women) hair styling ladies hair"><span class="n">Braids (Men and Women)</span><span class="dots" aria-hidden="true"></span><span class="pr">From &#8358;15,000</span></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="svc-cat" id="nails" data-cat="nails">
+            <div class="svc-cat-head">
+              <h2>Nails &amp; Face</h2>
+              <p>Pedicure, manicure, facials, acne pore extraction and skin care.</p>
+            </div>
+            <div class="svc-group" data-group="Nails, Feet &amp; Face Cream">
+              <h3>Nails, Feet &amp; Face Cream</h3>
+              <ul class="svc-list">
+                <li><a class="svc-row" href="booking.html?service=Pedicure%20%26%20leg%20massage" data-search="pedicure &amp; leg massage nails, feet &amp; face cream nails &amp; face"><span class="n">Pedicure &amp; leg massage</span><span class="dots" aria-hidden="true"></span><span class="pr">&#8358;15,000</span></a></li>
+                <li><a class="svc-row" href="booking.html?service=Jelly%20pedi" data-search="jelly pedi nails, feet &amp; face cream nails &amp; face"><span class="n">Jelly pedi</span><span class="dots" aria-hidden="true"></span><span class="pr">&#8358;20,000</span></a></li>
+                <li><a class="svc-row" href="booking.html?service=Milk%20pedicure" data-search="milk pedicure nails, feet &amp; face cream nails &amp; face"><span class="n">Milk pedicure</span><span class="dots" aria-hidden="true"></span><span class="pr">&#8358;25,000</span></a></li>
+                <li><a class="svc-row" href="booking.html?service=Manicure" data-search="manicure nails, feet &amp; face cream nails &amp; face"><span class="n">Manicure</span><span class="dots" aria-hidden="true"></span><span class="pr">&#8358;8,000</span></a></li>
+                <li><a class="svc-row" href="booking.html?service=Acrylic%20%26%20Gel" data-search="acrylic &amp; gel nails, feet &amp; face cream nails &amp; face"><span class="n">Acrylic &amp; Gel</span><span class="dots" aria-hidden="true"></span><span class="pr">From &#8358;7,000</span></a></li>
+              </ul>
+            </div>
+            <div class="svc-group" data-group="Facial Treatment">
+              <h3>Facial Treatment</h3>
+              <p class="svc-note">Note: none of these types of facial treats pimples or acne. They have their functions depending on your complaint.</p>
+              <ul class="svc-list">
+                <li><a class="svc-row" href="booking.html?service=Hydrating%20facial" data-search="hydrating facial facial treatment nails &amp; face"><span class="n">Hydrating facial</span><span class="dots" aria-hidden="true"></span><span class="pr">&#8358;25,000</span></a></li>
+                <li><a class="svc-row" href="booking.html?service=Anti-aging%20facial" data-search="anti-aging facial facial treatment nails &amp; face"><span class="n">Anti-aging facial</span><span class="dots" aria-hidden="true"></span><span class="pr">&#8358;25,000</span></a></li>
+                <li><a class="svc-row" href="booking.html?service=Refreshing%20facial" data-search="refreshing facial facial treatment nails &amp; face"><span class="n">Refreshing facial</span><span class="dots" aria-hidden="true"></span><span class="pr">&#8358;20,000</span></a></li>
+              </ul>
+            </div>
+            <div class="svc-group" data-group="Pimples &amp; Acne Pore Extraction">
+              <h3>Pimples &amp; Acne Pore Extraction</h3>
+              <ul class="svc-list">
+                <li><a class="svc-row" href="booking.html?service=Pimples%20and%20Acne%20pore%20extraction%20%28Regular%29" data-search="pimples and acne pore extraction (regular) pimples &amp; acne pore extraction nails &amp; face"><span class="n">Pimples and Acne pore extraction (Regular)</span><span class="dots" aria-hidden="true"></span><span class="pr">&#8358;25,000</span></a></li>
+                <li><a class="svc-row" href="booking.html?service=Pimples%20and%20Acne%20pore%20extraction%20%28Advance%29" data-search="pimples and acne pore extraction (advance) pimples &amp; acne pore extraction nails &amp; face"><span class="n">Pimples and Acne pore extraction (Advance)</span><span class="dots" aria-hidden="true"></span><span class="pr">&#8358;35,000</span></a></li>
+                <li><a class="svc-row" href="booking.html?service=Pimples%20and%20Acne%20pore%20extraction%20%28Pro%29" data-search="pimples and acne pore extraction (pro) pimples &amp; acne pore extraction nails &amp; face"><span class="n">Pimples and Acne pore extraction (Pro)</span><span class="dots" aria-hidden="true"></span><span class="pr">&#8358;45,000</span></a></li>
+              </ul>
+            </div>
+            <div class="svc-group" data-group="Other Treatments">
+              <h3>Other Treatments</h3>
+              <ul class="svc-list">
+                <li><a class="svc-row" href="booking.html?service=Skin%20tag%20removal" data-search="skin tag removal other treatments nails &amp; face"><span class="n">Skin tag removal</span><span class="dots" aria-hidden="true"></span><span class="pr">&#8358;20,000</span></a></li>
+                <li><a class="svc-row" href="booking.html?service=Knuckles%20wash" data-search="knuckles wash other treatments nails &amp; face"><span class="n">Knuckles wash</span><span class="dots" aria-hidden="true"></span><span class="pr">&#8358;10,000</span></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="svc-cat" id="barbing" data-cat="barbing">
+            <div class="svc-cat-head">
+              <h2>Barbing</h2>
+              <p>Haircuts, dye and tints, dreadlocks and the Legends Pac for men, women and children.</p>
+            </div>
+            <div class="svc-group" data-group="Barbing">
+              <h3>Barbing</h3>
+              <ul class="svc-list">
+                <li><a class="svc-row" href="booking.html?service=Men%20haircut" data-search="men haircut barbing barbing"><span class="n">Men haircut</span><span class="dots" aria-hidden="true"></span><span class="pr">&#8358;5,000</span></a></li>
+                <li><a class="svc-row" href="booking.html?service=Carving%20and%20shaving" data-search="carving and shaving barbing barbing"><span class="n">Carving and shaving</span><span class="dots" aria-hidden="true"></span><span class="pr">&#8358;3,000</span></a></li>
+                <li><a class="svc-row" href="booking.html?service=Women%20haircut" data-search="women haircut barbing barbing"><span class="n">Women haircut</span><span class="dots" aria-hidden="true"></span><span class="pr">&#8358;6,000</span></a></li>
+                <li><a class="svc-row" href="booking.html?service=Children%20haircut" data-search="children haircut barbing barbing"><span class="n">Children haircut</span><span class="dots" aria-hidden="true"></span><span class="pr">&#8358;3,000</span></a></li>
+                <li><a class="svc-row" href="booking.html?service=Cut%20and%20black%20dye%20%28Male%29" data-search="cut and black dye (male) barbing barbing"><span class="n">Cut and black dye (Male)</span><span class="dots" aria-hidden="true"></span><span class="pr">&#8358;7,000</span></a></li>
+                <li><a class="svc-row" href="booking.html?service=Carve%20and%20black%20dye" data-search="carve and black dye barbing barbing"><span class="n">Carve and black dye</span><span class="dots" aria-hidden="true"></span><span class="pr">&#8358;5,000</span></a></li>
+                <li><a class="svc-row" href="booking.html?service=Cut%20and%20black%20dye%20%28Female%29" data-search="cut and black dye (female) barbing barbing"><span class="n">Cut and black dye (Female)</span><span class="dots" aria-hidden="true"></span><span class="pr">&#8358;7,000</span></a></li>
+                <li><a class="svc-row" href="booking.html?service=Basic%20gold%20tint%20%28Male%29" data-search="basic gold tint (male) barbing barbing"><span class="n">Basic gold tint (Male)</span><span class="dots" aria-hidden="true"></span><span class="pr">&#8358;20,000</span></a></li>
+                <li><a class="svc-row" href="booking.html?service=Basic%20gold%20tint%20%28Female%29" data-search="basic gold tint (female) barbing barbing"><span class="n">Basic gold tint (Female)</span><span class="dots" aria-hidden="true"></span><span class="pr">&#8358;20,000</span></a></li>
+                <li><a class="svc-row" href="booking.html?service=White%20tint%20%28Male%20%26%20Female%29" data-search="white tint (male &amp; female) barbing barbing"><span class="n">White tint (Male &amp; Female)</span><span class="dots" aria-hidden="true"></span><span class="pr">&#8358;25,000</span></a></li>
+                <li><a class="svc-row" href="booking.html?service=Low%20cut%2C%20tinting%20%28Wine%2C%20Ginger%2C%20Red%2C%20etc%29" data-search="low cut, tinting (wine, ginger, red, etc) barbing barbing"><span class="n">Low cut, tinting (Wine, Ginger, Red, etc)</span><span class="dots" aria-hidden="true"></span><span class="pr">&#8358;30,000</span></a></li>
+                <li><a class="svc-row" href="booking.html?service=Sporting%20wave%20wash%20%26%20clean" data-search="sporting wave wash &amp; clean barbing barbing"><span class="n">Sporting wave wash &amp; clean</span><span class="dots" aria-hidden="true"></span><span class="pr">&#8358;10,000</span></a></li>
+                <li><a class="svc-row" href="booking.html?service=Fresh%20Dread%20%28Short%20hair%29" data-search="fresh dread (short hair) barbing barbing"><span class="n">Fresh Dread (Short hair)</span><span class="dots" aria-hidden="true"></span><span class="pr">&#8358;40,000</span></a></li>
+                <li><a class="svc-row" href="booking.html?service=Fresh%20Dread%20%28Long%20hair%29" data-search="fresh dread (long hair) barbing barbing"><span class="n">Fresh Dread (Long hair)</span><span class="dots" aria-hidden="true"></span><span class="pr">&#8358;40,000</span></a></li>
+                <li><a class="svc-row" href="booking.html?service=Dread%20washing" data-search="dread washing barbing barbing"><span class="n">Dread washing</span><span class="dots" aria-hidden="true"></span><span class="pr">&#8358;3,000</span></a></li>
+                <li><a class="svc-row" href="booking.html?service=Dread%20maintenance%20%28Relock%29" data-search="dread maintenance (relock) barbing barbing"><span class="n">Dread maintenance (Relock)</span><span class="dots" aria-hidden="true"></span><span class="pr">&#8358;30,000</span></a></li>
+                <li><a class="svc-row" href="booking.html?service=Cut%20and%20black%20dye%20with%20relaxer%20%28Male%29" data-search="cut and black dye with relaxer (male) barbing barbing"><span class="n">Cut and black dye with relaxer (Male)</span><span class="dots" aria-hidden="true"></span><span class="pr">&#8358;15,000</span></a></li>
+              </ul>
+            </div>
+            <div class="svc-group" data-group="Legends Pac">
+              <h3>Legends Pac</h3>
+              <ul class="svc-list">
+                <li><a class="svc-row" href="booking.html?service=Legends%20Pac%20%28Barbing%2C%20dying%2C%20mini%20facial%20steam%20%26%20neck%20vibrating%20massage%29" data-search="legends pac (barbing, dying, mini facial steam &amp; neck vibrating massage) legends pac barbing"><span class="n">Legends Pac (Barbing, dying, mini facial steam &amp; neck vibrating massage)</span><span class="dots" aria-hidden="true"></span><span class="pr">&#8358;50,000</span></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="svc-cat" id="lash" data-cat="lash">
+            <div class="svc-cat-head">
+              <h2>Lash &amp; Brows</h2>
+              <p>Lash extensions, semi-permanent brows, brow tint and lamination.</p>
+            </div>
+            <div class="svc-group" data-group="Lash Extension">
+              <h3>Lash Extension</h3>
+              <ul class="svc-list">
+                <li><a class="svc-row" href="booking.html?service=Classic%20lash%20extension" data-search="classic lash extension lash extension lash &amp; brows"><span class="n">Classic lash extension</span><span class="dots" aria-hidden="true"></span><span class="pr">&#8358;15,000</span></a></li>
+                <li><a class="svc-row" href="booking.html?service=Hybrid%20lash%20extension" data-search="hybrid lash extension lash extension lash &amp; brows"><span class="n">Hybrid lash extension</span><span class="dots" aria-hidden="true"></span><span class="pr">&#8358;18,000</span></a></li>
+                <li><a class="svc-row" href="booking.html?service=Volume%20lash%20extension" data-search="volume lash extension lash extension lash &amp; brows"><span class="n">Volume lash extension</span><span class="dots" aria-hidden="true"></span><span class="pr">&#8358;22,000</span></a></li>
+                <li><a class="svc-row" href="booking.html?service=Wispy%20lash%20extension" data-search="wispy lash extension lash extension lash &amp; brows"><span class="n">Wispy lash extension</span><span class="dots" aria-hidden="true"></span><span class="pr">&#8358;8,000</span></a></li>
+                <li><a class="svc-row" href="booking.html?service=Mega%20volume%20lash%20extension" data-search="mega volume lash extension lash extension lash &amp; brows"><span class="n">Mega volume lash extension</span><span class="dots" aria-hidden="true"></span><span class="pr">&#8358;25,000</span></a></li>
+                <li><a class="svc-row" href="booking.html?service=Bottom%20lash" data-search="bottom lash lash extension lash &amp; brows"><span class="n">Bottom lash</span><span class="dots" aria-hidden="true"></span><span class="pr">&#8358;8,000</span></a></li>
+                <li><a class="svc-row" href="booking.html?service=Customized%20full%20set" data-search="customized full set lash extension lash &amp; brows"><span class="n">Customized full set</span><span class="dots" aria-hidden="true"></span><span class="pr">&#8358;38,000</span></a></li>
+              </ul>
+            </div>
+            <div class="svc-group" data-group="Semi Permanent Brows">
+              <h3>Semi Permanent Brows</h3>
+              <ul class="svc-list">
+                <li><a class="svc-row" href="booking.html?service=Microblading" data-search="microblading semi permanent brows lash &amp; brows"><span class="n">Microblading</span><span class="dots" aria-hidden="true"></span><span class="pr">&#8358;30,000</span></a></li>
+                <li><a class="svc-row" href="booking.html?service=Micro%20shading" data-search="micro shading semi permanent brows lash &amp; brows"><span class="n">Micro shading</span><span class="dots" aria-hidden="true"></span><span class="pr">&#8358;35,000</span></a></li>
+                <li><a class="svc-row" href="booking.html?service=Ombre%20shading" data-search="ombre shading semi permanent brows lash &amp; brows"><span class="n">Ombre shading</span><span class="dots" aria-hidden="true"></span><span class="pr">&#8358;40,000</span></a></li>
+                <li><a class="svc-row" href="booking.html?service=Combination%20brows" data-search="combination brows semi permanent brows lash &amp; brows"><span class="n">Combination brows</span><span class="dots" aria-hidden="true"></span><span class="pr">&#8358;45,000</span></a></li>
+                <li><a class="svc-row" href="booking.html?service=Brow%20tint" data-search="brow tint semi permanent brows lash &amp; brows"><span class="n">Brow tint</span><span class="dots" aria-hidden="true"></span><span class="pr">&#8358;10,000</span></a></li>
+                <li><a class="svc-row" href="booking.html?service=Brow%20lamination" data-search="brow lamination semi permanent brows lash &amp; brows"><span class="n">Brow lamination</span><span class="dots" aria-hidden="true"></span><span class="pr">&#8358;10,000</span></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="svc-cat" id="specialty" data-cat="specialty">
+            <div class="svc-cat-head">
+              <h2>Specialty Services</h2>
+              <p>Tattoo, professional piercing, teeth whitening, mobile barbering and the Barber / Spa Academy.</p>
+            </div>
+            <div class="svc-group" data-group="Specialty Services">
+              <h3>Specialty Services</h3>
+              <ul class="svc-list">
+                <li><a class="svc-row" href="booking.html?service=Tattoo" data-search="tattoo specialty services specialty services"><span class="n">Tattoo</span><span class="dots" aria-hidden="true"></span><span class="pr">From &#8358;15,000</span></a></li>
+                <li><a class="svc-row" href="booking.html?service=Professional%20Piercing" data-search="professional piercing specialty services specialty services"><span class="n">Professional Piercing</span><span class="dots" aria-hidden="true"></span><span class="pr">From &#8358;8,000</span></a></li>
+                <li><a class="svc-row" href="booking.html?service=Teeth%20Whitening" data-search="teeth whitening specialty services specialty services"><span class="n">Teeth Whitening & Cleaning</span><span class="dots" aria-hidden="true"></span><span class="pr">From &#8358;75,000</span></a></li>
+                <li><a class="svc-row" href="booking.html?service=Mobile%20Barbering" data-search="mobile barbering specialty services specialty services"><span class="n">Mobile Barbering</span><span class="dots" aria-hidden="true"></span><span class="pr">From &#8358;30,000</span></a></li>
+                <li><a class="svc-row" href="booking.html?service=Barber%20%2F%20Spa%20Academy" data-search="barber / spa academy specialty services specialty services"><span class="n">Barber / Spa Academy</span><span class="dots" aria-hidden="true"></span><span class="pr">From &#8358;200,000</span></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <p id="svc-empty" class="svc-empty" role="status" hidden>No services match your search.</p>
+      </div>
+    </section>
+    <section class="cta">
+      <div class="wrap">
+        <h2>
+          YOUR NEXT LOOK STARTS HERE.
+        </h2>
+        <p>
+          Ready for a fresh cut? Choose your service and book your preferred appointment.
+        </p>
+        <a class="btn solid" href="booking.html">
+          BOOK YOUR APPOINTMENT
+        </a>
+      </div>
+    </section>
+    <div id="site-footer">
+    </div>
+    <button id="top" aria-label="Back to top">
+      &uarr;
+    </button>
+    <script src="js/script.js">
+    </script>
+    <script>
+      (() => {
+        const buttons = [...document.querySelectorAll("#svc-filters button")];
+        const cats = [...document.querySelectorAll(".svc-cat")];
+        const search = document.getElementById("svc-search");
+        const empty = document.getElementById("svc-empty");
+        let cat = "all";
+        const apply = () => {
+          const q = search.value.trim().toLowerCase();
+          let any = false;
+          cats.forEach(c => {
+            let catHasRows = false;
+            c.querySelectorAll(".svc-group").forEach(g => {
+              let groupHasRows = false;
+              g.querySelectorAll(".svc-row").forEach(r => {
+                const match = !q || r.dataset.search.includes(q);
+                r.parentElement.hidden = !match;
+                if (match) groupHasRows = true;
+              });
+              g.hidden = !groupHasRows;
+              if (groupHasRows) catHasRows = true;
+            });
+            c.hidden = !((cat === "all" || c.dataset.cat === cat) && catHasRows);
+            if (!c.hidden) any = true;
+          });
+          empty.hidden = any;
+        };
+        const choose = k => {
+          cat = k;
+          buttons.forEach(b => b.classList.toggle("on", b.dataset.k === k));
+          apply();
+        };
+        document.getElementById("svc-filters").addEventListener("click", e => {
+          const b = e.target.closest("button");
+          if (b) choose(b.dataset.k);
+        });
+        search.addEventListener("input", apply);
+        const wanted = new URLSearchParams(location.search).get("cat") || location.hash.slice(1);
+        choose(buttons.some(b => b.dataset.k === wanted) ? wanted : "all");
+      })();
+    </script>
+  </body>
+</html>
