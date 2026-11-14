@@ -148,26 +148,21 @@ Please confirm receipt of payment and whether this appointment is available. I u
 
 Thank you!`;
 
-        if (navigator.share && navigator.canShare && navigator.canShare({ files: [receipt] })) {
-            try {
-                await navigator.share({ title: "Appointment and payment request", text: message, files: [receipt] });
-                show("The share sheet was closed. Please make sure you sent the request and receipt in your chosen app. Your booking is not confirmed until the salon replies.");
-                return;
-            }
-            catch (error) {
-                if (error.name === "AbortError")
-                    return show("Sharing was canceled. No request was sent. You can try again or copy the request and attach the receipt manually.", true);
-                console.error("Could not share the booking request and receipt.", error);
-            }
-        }
-
         $("#booking-message").value = message;
-        $("#social-booking-link").href = platform === "whatsapp"
+        const destination = platform === "whatsapp"
             ? `https://wa.me/${businessWhatsAppNumber}?text=${encodeURIComponent(message)}`
             : socialProfiles[platform];
+        const destinationLink = $("#social-booking-link");
+        destinationLink.href = destination;
         $("#social-booking-link").textContent = `Open ${platform[0].toUpperCase() + platform.slice(1)}`;
         $("#copy-status").textContent = "";
         socialBooking.hidden = false;
+        const opened = window.open(destination, "_blank");
+        if (opened)
+            opened.opener = null;
+        show(opened
+            ? `Opened ${platform[0].toUpperCase() + platform.slice(1)} in a new tab. Copy the request below and attach your receipt before sending.`
+            : `Your browser blocked the new tab. Use the Open ${platform[0].toUpperCase() + platform.slice(1)} button below, then copy the request and attach your receipt.`);
         socialBooking.scrollIntoView({ behavior: "smooth", block: "center" });
     });
 })();
