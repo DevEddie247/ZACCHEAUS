@@ -998,6 +998,12 @@ section {
   color:var(--white);
 }
 
+.form-label {
+  color:var(--white);
+  font-size:.85rem;
+  margin-bottom:.35rem;
+}
+
 .form .full {
   grid-column:1/-1;
 }
@@ -1017,6 +1023,12 @@ section {
 .form input:focus,.form select:focus,.form textarea:focus {
   border-color:var(--gold);
   outline:0;
+}
+
+.form input[type="checkbox"] {
+  width:auto;
+  margin-right:.45rem;
+  accent-color:var(--gold);
 }
 
 .err {
@@ -1070,10 +1082,163 @@ section {
   background:#ff7b7b1a;
 }
 
+.service-options {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));
+  gap:.65rem;
+  max-height:380px;
+  overflow:auto;
+  padding:.75rem;
+  background:var(--black);
+  border:1px solid #3a3a3a;
+}
+
+.service-category {
+  min-width:0;
+  padding:.65rem;
+  border:1px solid #3a3a3a;
+}
+
+.service-category legend {
+  padding:0 .35rem;
+  color:var(--gold);
+  font-weight:600;
+}
+
+.service-option {
+  display:flex!important;
+  align-items:flex-start;
+  gap:.65rem;
+  padding:.5rem;
+  border-bottom:1px solid #2a2a2a;
+  cursor:pointer;
+}
+
+.service-option input[type="checkbox"] {
+  width:1rem;
+  height:1rem;
+  margin:.25rem 0 0;
+  accent-color:var(--gold);
+  flex:none;
+}
+
+.service-option span {
+  display:flex;
+  justify-content:space-between;
+  gap:.5rem;
+  width:100%;
+}
+
+.service-option small {
+  color:var(--gold);
+  white-space:nowrap;
+}
+
+.payment-summary,.payment-details {
+  padding:1.2rem;
+  background:var(--black);
+  border:1px solid #3a3a3a;
+}
+
+.payment-summary h2,.payment-details h2 {
+  font-size:1.45rem;
+}
+
+.payment-total {
+  margin-top:.5rem;
+  font-size:1.2rem;
+}
+
+.payment-total strong {
+  color:var(--gold);
+}
+
+.price-disclaimer,.payment-reminder {
+  font-size:.85rem;
+  color:#c7c7c7;
+}
+
+.payment-account {
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto auto;
+  align-items:center;
+  gap:.75rem;
+  padding:.8rem 0;
+  border-bottom:1px solid #3a3a3a;
+}
+
+.payment-account:last-child {
+  border-bottom:0;
+}
+
+.payment-account-name {
+  margin-top:.5rem;
+  overflow-wrap:anywhere;
+}
+
+.account-number {
+  font-variant-numeric:tabular-nums;
+  letter-spacing:.03em;
+}
+
+.copy-account {
+  padding:.45rem .8rem;
+  font-size:.75rem;
+}
+
+.social-booking-actions {
+  display:flex;
+  flex-wrap:wrap;
+  gap:.75rem;
+  margin-top:.75rem;
+}
+
+.copy-status {
+  min-height:1.5em;
+  margin-top:.5rem;
+  font-size:.85rem;
+}
+
 @media(max-width:640px) {
   .form {
     grid-template-columns:1fr;
-    padding:1.3rem;
+    gap:.9rem;
+    padding:1rem;
+  }
+  .booking-page .page-head h1 {
+    font-size:clamp(1.7rem,7vw,2.2rem);
+  }
+  .booking-page .form {
+    font-size:.92rem;
+  }
+  .booking-page .form input,
+  .booking-page .form select,
+  .booking-page .form textarea {
+    padding:.7rem;
+    font-size:16px;
+  }
+  .payment-summary,
+  .payment-details {
+    padding:.9rem;
+  }
+  .payment-summary h2,
+  .payment-details h2 {
+    font-size:1.25rem;
+  }
+  .payment-account {
+    grid-template-columns:minmax(0,1fr) auto;
+    gap:.5rem;
+  }
+  .payment-account .account-number {
+    grid-column:1;
+    grid-row:2;
+  }
+  .payment-account .copy-account {
+    grid-column:2;
+    grid-row:1 / span 2;
+  }
+  .payment-total {
+    font-size:1.05rem;
   }
 }
 
