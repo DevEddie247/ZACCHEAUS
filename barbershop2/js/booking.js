@@ -159,9 +159,6 @@ Thank you!`;
         }));
         const time = val("time");
         const customer = { name: val("name"), phone: val("phone") };
-        if (typeof supabase === "undefined" || typeof SUPABASE_URL === "undefined" || typeof SUPABASE_ANON_KEY === "undefined") {
-            return show("Booking is unavailable because the secure booking service is not configured. Please contact the salon directly.", true);
-        }
 
         const hasEstimatedPrices = services.some(service => service.estimate);
         const msg = buildMessage({ total, hasEstimatedPrices, date, time, platform });
@@ -170,6 +167,35 @@ Thank you!`;
             : profile;
         const popup = window.open("", "_blank");
         const copiedMessage = copyText(msg);
+        const openPlatform = () => {
+            if (!popup)
+                return false;
+            try {
+                popup.opener = null;
+                popup.location.replace(openUrl);
+                return true;
+            }
+            catch (error) {
+                console.error("Could not open the selected messaging platform.", error);
+                return false;
+            }
+        };
+        const showHandoff = async notice => {
+            const copied = await copiedMessage;
+            showPanel({
+                msg,
+                openUrl,
+                openLabel: "Open " + PLATFORM_NAMES[platform],
+                notice: `${notice} ${copied ? "The request was copied." : "Copy the request below."}`
+            });
+        };
+
+        if (typeof supabase === "undefined" || typeof SUPABASE_URL === "undefined" || typeof SUPABASE_ANON_KEY === "undefined") {
+            openPlatform();
+            showHandoff("The messaging platform was opened, but the booking could not be saved because Supabase is not configured.");
+            return show("Your request is ready to send, but it was not saved on the website. Check the Supabase setup, then submit again.", true);
+        }
+
         submitButton.disabled = true;
         submitButton.textContent = "Submitting securely…";
         let succeeded = false;
@@ -189,15 +215,7 @@ Thank you!`;
                 }]);
             if (bookingError)
                 throw new Error(`Booking record failed: ${bookingError.message}`);
-            let opened = false;
-            if (popup) {
-                try {
-                    popup.opener = null;
-                    popup.location.replace(openUrl);
-                    opened = true;
-                }
-                catch (_) { }
-            }
+            const opened = openPlatform();
             const copied = await copiedMessage;
             f.reset();
             updateTotal();
@@ -219,12 +237,10 @@ Thank you!`;
             );
         }
         catch (error) {
-            if (popup)
-                popup.close();
             console.error("Could not submit booking request.", error);
-            show(error.message.includes("Booking record failed")
-                ? "Your booking request could not be saved. Please try again or contact the salon."
-                : "We could not submit your booking request. Please try again or contact the salon. If this keeps happening, the salon administrator must apply supabase/setup-bookings.sql and check Supabase settings.", true);
+            openPlatform();
+            await showHandoff("The selected platform was opened, but your booking could not be saved.");
+            show(`Your request is ready to send, but it was not saved on the website. ${error.message} Check the Supabase table, permissions, and setup-bookings.sql, then try again.`, true);
         }
         finally {
             if (succeeded) {
