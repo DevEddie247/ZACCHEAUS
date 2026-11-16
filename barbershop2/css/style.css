@@ -1082,6 +1082,14 @@ section {
   background:#ff7b7b1a;
 }
 
+.notice.success {
+  border-color:#4caf72;
+  background:#4caf721a;
+  color:#e7ffed;
+  font-size:1rem;
+  font-weight:600;
+}
+
 .service-options {
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));
@@ -1134,56 +1142,28 @@ section {
   white-space:nowrap;
 }
 
-.payment-summary,.payment-details {
+.service-summary {
   padding:1.2rem;
   background:var(--black);
   border:1px solid #3a3a3a;
 }
 
-.payment-summary h2,.payment-details h2 {
+.service-summary h2 {
   font-size:1.45rem;
 }
 
-.payment-total {
+.estimated-total {
   margin-top:.5rem;
   font-size:1.2rem;
 }
 
-.payment-total strong {
+.estimated-total strong {
   color:var(--gold);
 }
 
-.price-disclaimer,.payment-reminder {
+.price-disclaimer,.booking-reminder {
   font-size:.85rem;
   color:#c7c7c7;
-}
-
-.payment-account {
-  display:grid;
-  grid-template-columns:minmax(0,1fr) auto auto;
-  align-items:center;
-  gap:.75rem;
-  padding:.8rem 0;
-  border-bottom:1px solid #3a3a3a;
-}
-
-.payment-account:last-child {
-  border-bottom:0;
-}
-
-.payment-account-name {
-  margin-top:.5rem;
-  overflow-wrap:anywhere;
-}
-
-.account-number {
-  font-variant-numeric:tabular-nums;
-  letter-spacing:.03em;
-}
-
-.copy-account {
-  padding:.45rem .8rem;
-  font-size:.75rem;
 }
 
 .social-booking-actions {
@@ -1217,27 +1197,13 @@ section {
     padding:.7rem;
     font-size:16px;
   }
-  .payment-summary,
-  .payment-details {
+  .service-summary {
     padding:.9rem;
   }
-  .payment-summary h2,
-  .payment-details h2 {
+  .service-summary h2 {
     font-size:1.25rem;
   }
-  .payment-account {
-    grid-template-columns:minmax(0,1fr) auto;
-    gap:.5rem;
-  }
-  .payment-account .account-number {
-    grid-column:1;
-    grid-row:2;
-  }
-  .payment-account .copy-account {
-    grid-column:2;
-    grid-row:1 / span 2;
-  }
-  .payment-total {
+  .estimated-total {
     font-size:1.05rem;
   }
 }

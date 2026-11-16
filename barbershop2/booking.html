@@ -4,13 +4,57 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>
-      Book &amp; Pay | Zacchaeus Unisex Salon &amp; Spa
+      Book an Appointment | Zacchaeus Unisex Salon &amp; Spa
     </title>
     <meta name="description" content="Premium barbershop and grooming studio.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <style id="booking-responsive">
+      /* Phone-friendly form controls. Scoped to the booking page. */
+      .booking-page .form select {
+        -webkit-appearance: none;
+        appearance: none;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%23C9A45C' stroke-width='2'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right .8rem center;
+        background-size: 12px 8px;
+        padding-right: 2.2rem;
+        text-overflow: ellipsis;
+      }
+      .booking-page .form input[type="checkbox"] {
+        width: auto;
+        height: auto;
+        min-height: 0;
+        margin: 0 .5rem 0 0;
+        padding: 0;
+        flex: none;
+      }
+      @media (max-width: 640px) {
+        .booking-page .page-head { padding: 7rem 0 2rem; }
+        .booking-page .form { padding: 1rem; gap: .9rem; }
+        .booking-page .form label { font-size: .8rem; }
+        .booking-page .form select,
+        .booking-page .form input:not([type="checkbox"]):not([type="file"]) {
+          font-size: 16px; /* 16px stops iPhones zooming in when a field is tapped */
+          line-height: 1.2;
+          min-height: 42px;
+          height: 42px;
+          padding: 0 .7rem;
+          margin-top: .25rem;
+          max-width: 100%;
+          min-width: 0;
+        }
+        .booking-page .form select { padding-right: 2rem; }
+        .booking-page .form input[type="date"] { display: block; -webkit-appearance: none; appearance: none; }
+        .booking-page .form input[type="file"] { max-width: 100%; font-size: .85rem; }
+        .booking-page .form textarea { font-size: 16px; }
+        .booking-page .social-booking-actions { flex-wrap: wrap; gap: .6rem; }
+        .booking-page .social-booking-actions .btn { flex: 1 1 100%; }
+        .booking-page .form .btn.solid[type="submit"] { padding: .8rem 1rem; }
+      }
+    </style>
   </head>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <body class="booking-page">
@@ -19,10 +63,10 @@
     <div class="page-head">
       <div class="wrap">
         <h1 style="font-size:clamp(2.2rem,5vw,3.6rem)">
-          Book &amp; Pay for Your Appointment
+          Book an Appointment
         </h1>
         <p>
-          Select services, transfer the total, then share your receipt with your booking request.
+          Choose your services and preferred messaging platform to send us a booking request.
         </p>
       </div>
     </div>
@@ -41,22 +85,13 @@
             <span class="err">
             </span>
           </label>
-          <!-- <label>
-            Email (optional)
-            <input id="email" type="email" autocomplete="email">
-            <span class="err">
-            </span>
-          </label> -->
           <div id="service" class="full">
             <p class="form-label">Choose one or more services *</p>
             <div id="service-options" class="service-options"></div>
             <span class="err"></span>
           </div>
-          <div class="full payment-summary" aria-live="polite">
-            <h2>Payment total</h2>
-            <p id="price-breakdown">Choose services to see their prices.</p>
-            <p class="payment-total">Total: <strong id="service-total">₦0</strong></p>
-            <p class="price-disclaimer">Prices marked “From” are starting-price estimates. Confirm the final amount with us before transferring.</p>
+          <div class="full service-summary" aria-live="polite">
+            <p class="estimated-total">Total: <strong id="service-total">₦0</strong></p>
           </div>
           <label>
             Appointment date *
@@ -70,32 +105,6 @@
             </select>
             <span class="err">
             </span>
-          </label>
-          <div class="full payment-details">
-            <h2>Pay by bank transfer</h2>
-            <p>Transfer the total above to either account.</p>
-            <p class="payment-account-name">Account name: <strong>Zacchaeus Unisex Salon and spa</strong></p>
-            <div class="payment-account">
-              <strong>Access Bank</strong>
-              <span class="account-number">1811046956</span>
-              <button type="button" class="copy-account btn" data-account="1811046956" aria-label="Copy Access Bank account number">Copy</button>
-            </div>
-            <div class="payment-account">
-              <strong>Moniepoint</strong>
-              <span class="account-number">5674252663</span>
-              <button type="button" class="copy-account btn" data-account="5674252663" aria-label="Copy Moniepoint account number">Copy</button>
-            </div>
-            <p id="account-copy-status" class="copy-status" role="status" aria-live="polite"></p>
-          </div>
-          <label class="full">
-            Payment receipt (image or PDF, up to 10 MB) *
-            <input id="receipt" type="file" accept="image/jpeg,image/png,image/webp,application/pdf">
-            <span class="err"></span>
-          </label>
-          <label class="full">
-            <input id="payment-confirmation" type="checkbox">
-            I confirm that I have completed the bank transfer.
-            <span class="err"></span>
           </label>
           <label class="full">
             Preferred messaging platform *
@@ -114,24 +123,23 @@
           <div id="note" class="notice full" role="status" hidden>
           </div>
           <div id="social-booking" class="full" hidden>
-            <p class="notice">Your browser could not share the receipt automatically. Copy the request, open your chosen platform, and attach the receipt file manually before sending.</p>
+            <p class="notice">Your booking request is ready. Copy it and send it to us using your preferred messaging platform.</p>
             <label>
               Your appointment request
               <textarea id="booking-message" rows="10" readonly></textarea>
             </label>
             <div class="social-booking-actions">
               <button id="copy-booking-message" type="button" class="btn">Copy request</button>
-              <a id="social-booking-link" class="btn solid" href="#" target="_blank" rel="noopener">Open profile</a>
+              <a id="social-booking-link" class="btn solid" href="#" target="_blank" rel="noopener">Open platform</a>
             </div>
             <p id="copy-status" class="copy-status" role="status" aria-live="polite"></p>
           </div>
-          <!-- <p class="full payment-reminder">Your receipt stays on your device. If your phone offers a share sheet, choose your messaging app to share the request and receipt together. Otherwise, copy the request and attach the receipt manually. This website does not store or verify payment receipts.</p> -->
           <div class="full">
             <button type="submit" class="btn solid" style="width:100%">
-              Share booking request &amp; receipt
+              Send booking request
             </button>
           </div>
-          <p class="full payment-reminder">Your booking is only a request and is not confirmed until the salon verifies your payment and replies.</p>
+          <p class="full booking-reminder">Your appointment is a request and is not confirmed until the salon replies.</p>
         </form>
       </div>
     </section>
